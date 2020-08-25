@@ -1,0 +1,80 @@
+﻿GHSV
+
+.Net Core
+
+	- .Net core is an open-source and cross platform framework which is used for building several type of applications
+	- We can use  - Windows, MAC , Linux, Docer (We can use .Net core image on docker also)
+	- We can build - Web Applications (ASP.Net MVC Core, Web API, Razor Pages, Microservices), Mobile, Console, Desktop, IOT (internet Of Things), ML (Machine Learning), Gaming, Cloud
+	-  No fees or license is required even for commercial applications also
+	- Cross Platform
+	- CLI support - Command Line Interface
+	- Using NuGet package management 
+	
+==========================================================================================================================================================
+
+(#3) Setting up dot net core machine development | Asp.Net Core tutorial | Asp.Net Core 3.1 tutorial
+
+	- If you want deploy your application you can install - .Net Core Runtime instead of installing entire .Net Core SDK
+	- To Know the version of the .Net from command prompt  = > dotnet --version
+
+==========================================================================================================================================================
+	
+(#4) How to create asp.net core mvc web application (using Visual Studio 2019 & CLI) | .Net Core 3.
+
+	- Template is a default code of the certain functionalities
+	- No Authenctication (Default), Individual User Accounts , Work Or Schools Accounts, Windows Authentication
+	- To Create a project using CLI is from command prompt - => dotnet new -> Enter -> it will show the templates, language, shortcut, tags
+
+==========================================================================================================================================================
+
+(#5) What is MVC pattern (model view controller architecture) in .net core | Asp.Net Core Tutorial
+
+	- Model View Controller (MVC)
+	- MVC is an architectural design pattern. It means this design pattern is used at the architecture level of an application
+	- Model, View , Controller are the main pillars of MVC pattern
+	- Model - Responsible for data
+	- View - Responsible for UI
+	- Controller - Responsible for flow of the application by accepting User Input. A controller is a .CS file which has some methods called as "Action Methods"
+		- When a request comes from on controller, it actually hits an action method
+		- Now everything depends on Action Method what to return from it. It may return only view, only data, or both of them.
+	- Model - A model in asp.net core MVC is simple class which has some properties
+		- Model is used to pass data from controller (action method) to view and vice versa. i.e View to Controller (action method)
+		- Model is also used for server side validation. And with some techniques we can generate client side validation also
+		- It is not mandatory that each action method will return some Model
+		- public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+	- View is the combination of HTML and C# (.CSHTML)
+		- It is not a mandatory that each action method will return a view
+		- When a view gets rendered on browser then all its C# is converted into HTML. It means on a browser we will only see HTMl and data
+	- RenderSection, RenderBody are  part of RazorPageBase Interface. (abstract class - RazorPage)
+	- Benefits Of MVC
+		- Separation of Conern
+		- Each component has a specific job hence it is easy to debug the code
+
+==========================================================================================================================================================		
+(#6) Convert console application to web application in asp.net core _ WebHostBuilder in .net core
+	
+		- CreateDefaultBuilder (IHostBuilder)
+		- ConfigureWebHostDefaults (IHostBuilder)
+		- By default every web application is a console application in .Net core
+		- Steps to convert console application to web application
+			- Open the .csproject file => change the Project SDK to = Microsoft.Net.SDK" to "Microsoft.Net.SDK.Web" and remove the tag Output, Save the changes
+			- It automatically changes the project type to web application. Refer solution explorer, Framework -> you can see Microfot.AspNetCore.app, Microsoft.NETCore.app		
+==========================================================================================================================================================
+(#7) Setup application on GitHub repository _ ASP.NET Core Tutorial _ .Net Core 3.1 MVC Tutorial
+
+	- 
+
+==========================================================================================================================================================
+(#8) Middleware in Asp.net Core _ app.Use(), app.Next(), app.Map() _ Http Pipeline _ ASP.NET Core
+
+	- ASP.Net core create an HTTP applicaiton pipeline that process the request
+	- This HTTP pipeline is configure an "Configure" method of Startup.cs
+	- All the request to the application goes through the HTTP Pipeline
+	- A Middleware is a piece of code (component) which is used in Http Pipeline
+	- In an application we use multiple middleware
+	- Middleware has access to all the request and response
+	- Routing is a mapping a URL with particular resource
+	- MapGet -> Handles when Get request comes in route
+	- Map -> all the requests which are coming in route
+	- .Use() method - Adds a middleware delegate defined in-line to the application's request pipeline.
+	- Use() method takes two parameter -
